@@ -3,13 +3,9 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='mailto:jake@bestow.co'>Sign Up for a Developer Key</a>
 
 includes:
   - errors
@@ -19,115 +15,130 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to the Bestow Quote API.  Users of the API can get price quotes for Bestow life insurance products by passing in a few customer parameters. 
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+
+curl -X POST \
+  https://api.hellobestow.com/v2/quote \
+  -H 'Authorization: 82zZIHeBqUlBtICMX5li' \
+  -H 'Content-Type: application/json' \
+  -H 'cache-control: no-cache' \
+  -d '{
+	"birth_date": "1980-01-01", 
+	"gender": "male", 
+	"height_feet": 6, 
+	"height_inches": 0, 
+	"state": "TX", 
+	"weight": 180
+}
+'
 ```
 
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-```
+> Make sure to replace `82zZIHeBqUlBtICMX5li` with your API key.
 
-> Make sure to replace `meowmeowmeow` with your API key.
+Bestow uses API keys to allow access to the API. You can register a new Bestow API key by sending an [email to us](mailto:jake@bestow.co). 
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Bestow expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: 82zZIHeBqUlBtICMX5li`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>82zZIHeBqUlBtICMX5li</code> with your personal API key.
 </aside>
 
-# Kittens
+# Quote
 
-## Get All Kittens
+## Creating a Quote
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "product_rates": {
+    "BT0201": {
+      "100000": "8.33", 
+      "150000": "12.50", 
+      "200000": "16.67", 
+      "250000": "18.54", 
+      "300000": "22.25", 
+      "350000": "25.96", 
+      "400000": "29.67", 
+      "450000": "33.38", 
+      "50000": "4.63", 
+      "500000": "37.08"
+    }, 
+    "BT1002": {
+      "100000": "11.25", 
+      "1000000": "55.83", 
+      "150000": "14.38", 
+      "200000": "17.50", 
+      "250000": "16.66", 
+      "300000": "19.33", 
+      "350000": "22.00", 
+      "400000": "24.66", 
+      "450000": "27.33", 
+      "50000": "11.38", 
+      "500000": "29.58", 
+      "550000": "32.21", 
+      "600000": "34.83", 
+      "650000": "37.46", 
+      "700000": "40.08", 
+      "750000": "42.71", 
+      "800000": "45.33", 
+      "850000": "47.96", 
+      "900000": "50.58", 
+      "950000": "53.21"
+    }, 
+    "BT2002": {
+      "100000": "12.75", 
+      "1000000": "69.16", 
+      "150000": "16.63", 
+      "200000": "20.50", 
+      "250000": "21.04", 
+      "300000": "24.58", 
+      "350000": "28.12", 
+      "400000": "31.66", 
+      "450000": "35.21", 
+      "50000": "10.58", 
+      "500000": "36.25", 
+      "550000": "39.54", 
+      "600000": "42.83", 
+      "650000": "46.12", 
+      "700000": "49.41", 
+      "750000": "52.71", 
+      "800000": "56.00", 
+      "850000": "59.29", 
+      "900000": "62.58", 
+      "950000": "65.87"
+    }
+  }, 
+  "quote_id": "a3b4d9e4-567d-4d77-95da-4761b7985320"
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves a quote.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST https://api.hellobestow.com/v2/quote`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+birth_date | required | Birth date in format YYYY-MM-DD
+gender | true | "male" or "female"
+height_feet | true | Feet part of height
+height_inches | true | Inches part of height
+state | true | The 2-character abbreviation of the US state
+weight | true | Weight in lbs
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
