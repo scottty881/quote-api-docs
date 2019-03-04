@@ -7,9 +7,6 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='mailto:jake@bestow.co'>Sign Up for a Developer Key</a>
 
-includes:
-  - errors
-
 search: true
 ---
 
@@ -27,16 +24,6 @@ curl -X POST \
   https://api.hellobestow.com/v2/quote \
   -H 'Authorization: 82zZIHeBqUlBtICMX5li' \
   -H 'Content-Type: application/json' \
-  -H 'cache-control: no-cache' \
-  -d '{
-	"birth_date": "1980-01-01", 
-	"gender": "male", 
-	"height_feet": 6, 
-	"height_inches": 0, 
-	"state": "TX", 
-	"weight": 180
-}
-'
 ```
 
 
@@ -56,6 +43,25 @@ You must replace <code>82zZIHeBqUlBtICMX5li</code> with your personal API key.
 
 ## Creating a Quote
 
+> To get a quote, use this code:
+ 
+```shell
+
+curl -X POST \
+  https://api.hellobestow.com/v2/quote \
+  -H 'Authorization: 82zZIHeBqUlBtICMX5li' \
+  -H 'Content-Type: application/json' \
+  -H 'cache-control: no-cache' \
+  -d '{
+	"birth_date": "1980-01-01", 
+	"gender": "male", 
+	"height_feet": 6, 
+	"height_inches": 0, 
+	"state": "TX", 
+	"weight": 180
+}
+'
+```
 
 > The above command returns JSON structured like this:
 
@@ -131,9 +137,9 @@ This endpoint retrieves a quote.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter | Required | Description
 --------- | ------- | -----------
-birth_date | required | Birth date in format YYYY-MM-DD
+birth_date | true | Birth date in format YYYY-MM-DD
 gender | true | "male" or "female"
 height_feet | true | Feet part of height
 height_inches | true | Inches part of height
@@ -141,110 +147,39 @@ state | true | The 2-character abbreviation of the US state
 weight | true | Weight in lbs
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — Requests are rate limited at 10 requests per second
 </aside>
 
-## Get a Specific Kitten
+### Return values
 
-```ruby
-require 'kittn'
+The call will receive a JSON object with a prices for a 2-year life insurance project (BT0201), 10-year product (BT1002), and a 20-year product (BT2002)
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+Product | Length of Policy
+------ | ------
+BT0201 | 2 year
+BT1002 | 10 year
+BT2002 | 20 year
 
-```python
-import kittn
+Inside the Product offering, you will recieve different prices for different amounts of insurance the customer can buy.  In the example to the right, the values are
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+Product | Length of Policy | Face Value of Insurance | Price per Month
+------- | ----- | --------------------- | ----
+BT0201 | 2 year | $100,000 | $8.33
+BT0201 | 2 year | $150,000 | $12.50
+BT0201 | 2 year | $200,000 | $16.67
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
 
-```javascript
-const kittn = require('kittn');
+# Errors
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
+The Bestow API uses the following error codes:
 
-> The above command returns JSON structured like this:
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+Error Code | Meaning
+---------- | -------
+400 | Bad Request -- Your request is invalid.
+401 | Unauthorized -- Your API key is wrong.
+404 | Not Found -- The specified url could not be found.
+405 | Method Not Allowed -- You tried to access a quote with an invalid method.
+429 | Too Many Requests -- You're requesting too many quotes! Slow down!
+500 | Internal Server Error -- We had a problem with our server. Try again later.
+503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
