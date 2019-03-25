@@ -43,6 +43,10 @@ You must replace <code>82zZIHeBqUlBtICMX5li</code> with your personal API key.
 
 ## Creating a Quote
 
+Every insurance policy begins with a quote. You can think of quotes as templates that eventually turn into policies if a user decides to buy. Quotes are used to indicate the terms of the policy and the price (premium) associated with it.
+
+When calculating policy prices, we take many attributes into consideration, such as the user's age, gender, height, weight and status.  You’ll need to include this information when creating a quote through the API.
+
 > To get a quote, use this code:
  
 ```shell
@@ -128,8 +132,6 @@ curl -X POST \
   "quote_id": "a3b4d9e4-567d-4d77-95da-4761b7985320"
 }
 ```
-
-This endpoint retrieves a quote.
 
 ### HTTP Request
 
