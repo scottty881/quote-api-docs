@@ -1,0 +1,503 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#quote" class="toc-h1 toc-link" data-title="Quote">Quote</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#creating-a-quote" class="toc-h2 toc-link" data-title="Creating a Quote">Creating a Quote</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='mailto:jake@bestow.co'>Sign Up for a Developer Key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Bestow Quote API.  Users of the API can get price quotes for Bestow life insurance products by passing in a few customer parameters. </p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/quote <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>82zZIHeBqUlBtICMX5li</code> with your API key.</p>
+</blockquote>
+
+<p>Bestow uses API keys to allow access to the API. You can register a new Bestow API key by sending an <a href="mailto:jake@bestow.co">email to us</a>. </p>
+
+<p>Bestow expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: 82zZIHeBqUlBtICMX5li</code></p>
+
+<aside class="notice">
+You must replace <code>82zZIHeBqUlBtICMX5li</code> with your personal API key.
+</aside>
+<h1 id='quote'>Quote</h1><h2 id='creating-a-quote'>Creating a Quote</h2>
+<p>Every insurance policy begins with a quote. You can think of quotes as templates that eventually turn into policies if a user decides to buy. Quotes are used to indicate the terms of the policy and the price (premium) associated with it.</p>
+
+<p>When calculating policy prices, we take many attributes into consideration, such as the user&#39;s age, gender, height, weight and status.  You’ll need to include this information when creating a quote through the API.</p>
+
+<blockquote>
+<p>To get a quote, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/quote <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "birth_date": "1980-01-01", 
+    "gender": "male", 
+    "height_feet": 6, 
+    "height_inches": 0, 
+    "state": "TX", 
+    "weight": 180
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"product_rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BT0201"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"100000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"150000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.50"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"200000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16.67"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"250000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18.54"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"300000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22.25"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"350000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.96"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"400000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29.67"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"450000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33.38"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"50000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.63"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"500000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37.08"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"BT1002"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"100000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.25"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"1000000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55.83"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"150000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14.38"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"200000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17.50"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"250000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16.66"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"300000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"350000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22.00"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"400000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.66"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"450000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27.33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"50000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.38"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"500000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29.58"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"550000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32.21"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"600000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34.83"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"650000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37.46"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"700000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40.08"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"750000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42.71"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"800000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45.33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"850000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47.96"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"900000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.58"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"950000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53.21"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"BT2002"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"100000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.75"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"1000000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69.16"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"150000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16.63"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"200000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.50"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"250000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.04"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"300000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.58"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"350000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28.12"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"400000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31.66"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"450000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.21"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"50000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.58"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"500000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36.25"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"550000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39.54"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"600000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42.83"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"650000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46.12"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"700000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.41"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"750000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"52.71"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"800000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56.00"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"850000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59.29"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"900000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.58"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"950000"</span><span class="p">:</span><span class="w"> </span><span class="s2">"65.87"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+  </span><span class="s2">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a3b4d9e4-567d-4d77-95da-4761b7985320"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.hellobestow.com/v2/quote</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>birth_date</td>
+<td>true</td>
+<td>Birth date in format YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>true</td>
+<td>&quot;male&quot; or &quot;female&quot;</td>
+</tr>
+<tr>
+<td>height_feet</td>
+<td>true</td>
+<td>Feet part of height</td>
+</tr>
+<tr>
+<td>height_inches</td>
+<td>true</td>
+<td>Inches part of height</td>
+</tr>
+<tr>
+<td>state</td>
+<td>true</td>
+<td>The 2-character abbreviation of the US state</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>true</td>
+<td>Weight in lbs</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — Requests are rate limited at 10 requests per second
+</aside>
+<h3 id='return-values'>Return values</h3>
+<p>The call will receive a JSON object with a prices for a 2-year life insurance project (BT0201), 10-year product (BT1002), and a 20-year product (BT2002)</p>
+
+<table><thead>
+<tr>
+<th>Product</th>
+<th>Length of Policy</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>BT0201</td>
+<td>2 year</td>
+</tr>
+<tr>
+<td>BT1002</td>
+<td>10 year</td>
+</tr>
+<tr>
+<td>BT2002</td>
+<td>20 year</td>
+</tr>
+</tbody></table>
+
+<p>Inside the Product offering, you will recieve different prices for different amounts of insurance the customer can buy.  In the example to the right, the values are</p>
+
+<table><thead>
+<tr>
+<th>Product</th>
+<th>Length of Policy</th>
+<th>Face Value of Insurance</th>
+<th>Price per Month</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>BT0201</td>
+<td>2 year</td>
+<td>$100,000</td>
+<td>$8.33</td>
+</tr>
+<tr>
+<td>BT0201</td>
+<td>2 year</td>
+<td>$150,000</td>
+<td>$12.50</td>
+</tr>
+<tr>
+<td>BT0201</td>
+<td>2 year</td>
+<td>$200,000</td>
+<td>$16.67</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Bestow API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified url could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a quote with an invalid method.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many quotes! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
