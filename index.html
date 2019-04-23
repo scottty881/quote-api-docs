@@ -230,6 +230,9 @@
                   <li>
                     <a href="#creating-a-quote" class="toc-h2 toc-link" data-title="Creating a Quote">Creating a Quote</a>
                   </li>
+                  <li>
+                    <a href="#using-quote-to-enroll" class="toc-h2 toc-link" data-title="Using Quote to Enroll">Using Quote to Enroll</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -451,6 +454,73 @@ Remember — Requests are rate limited at 10 requests per second
 <td>2 year</td>
 <td>$200,000</td>
 <td>$16.67</td>
+</tr>
+</tbody></table>
+<h2 id='using-quote-to-enroll'>Using Quote to Enroll</h2>
+<blockquote>
+<p>To enroll from a quote, use:</p>
+
+<p><code>GET https://enrollment.hellobestow.com/account</code></p>
+</blockquote>
+
+<p>When you send customers to enroll in life insurance with Bestow, direct them to the following URL, and you can pass in query params that will link your quote to the enrollment application.  You can additionally pass in other query param so that the enrollment application is pre-populated with that data.  </p>
+
+<p>IMPORTANT: Make sure to include the <code>quoteid</code> you received from the Quote API call to link your customers&#39; quote with the enrollment application.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://enrollment.hellobestow.com/account</code></p>
+<h3 id='query-params'>Query Params</h3>
+<blockquote>
+<p>Example Using Query Parameters:</p>
+
+<p><code>GET https://enrollment.hellobestow.com/account?date_of_birth=01/01/1980&amp;gender=male&amp;height=72&amp;weight=180&amp;state=TN&amp;product=BT2002&amp;coverage=700000&amp;quoteid=4ea338e6-56c5-4fd2-b07b-c0f90764afa1</code></p>
+</blockquote>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_of_birth</td>
+<td>false</td>
+<td>Birth date in format YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>false</td>
+<td>&quot;male&quot; or &quot;female&quot;</td>
+</tr>
+<tr>
+<td>height</td>
+<td>false</td>
+<td>Total height in inches</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>false</td>
+<td>Total weight in lbs</td>
+</tr>
+<tr>
+<td>state</td>
+<td>false</td>
+<td>The 2-character abbreviation of the US state</td>
+</tr>
+<tr>
+<td>product</td>
+<td>false</td>
+<td>The product type ([either &quot;BT0201&quot;, &quot;BT1002&quot;, or &quot;BT2002&quot;]).  See full description above</td>
+</tr>
+<tr>
+<td>coverage</td>
+<td>false</td>
+<td>The face value of the life insurance policy in USD</td>
+</tr>
+<tr>
+<td>quoteid</td>
+<td>false</td>
+<td>The quoteid returned from the Quote API call</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
