@@ -193,12 +193,12 @@ IMPORTANT: Make sure to include the `quoteid` you received from the Quote API ca
 
 Parameter | Required | Description
 --------- | ------- | -----------
+product | true | The product type ([either "BT0201", "BT1002", or "BT2002"]).  See full description above
 date_of_birth | false | Birth date in format YYYY-MM-DD
 gender | false | "male" or "female"
 height | false | Total height in inches
 weight | false | Total weight in lbs
 state | false | The 2-character abbreviation of the US state
-product | false | The product type ([either "BT0201", "BT1002", or "BT2002"]).  See full description above
 coverage | false | The face value of the life insurance policy in USD
 quoteid | false | The quoteid returned from the Quote API call
 
