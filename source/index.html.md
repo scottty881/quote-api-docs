@@ -170,6 +170,41 @@ BT0201 | 2 year | $100,000 | $8.33
 BT0201 | 2 year | $150,000 | $12.50
 BT0201 | 2 year | $200,000 | $16.67
 
+## Using Quote to Enroll
+
+> To enroll from a quote, use:
+
+> `GET https://enrollment.hellobestow.com/account`
+
+When you send customers to enroll in life insurance with Bestow, direct them to the following URL, and you can pass in query params that will link your quote to the enrollment application.  You can additionally pass in other query param so that the enrollment application is pre-populated with that data.  
+
+IMPORTANT: Make sure to include the `quoteid` you received from the Quote API call to link your customers' quote with the enrollment application.
+
+### HTTP Request
+
+`GET https://enrollment.hellobestow.com/account`
+
+### Query Params
+
+> Example Using Query Parameters:
+
+> `GET https://enrollment.hellobestow.com/account?date_of_birth=01/01/1980&gender=male&height=72&weight=180&state=TN&product=BT2002&coverage=700000&quoteid=4ea338e6-56c5-4fd2-b07b-c0f90764afa1`
+
+
+Parameter | Required | Description
+--------- | ------- | -----------
+date_of_birth | false | Birth date in format YYYY-MM-DD
+gender | false | "male" or "female"
+height | false | Total height in inches
+weight | false | Total weight in lbs
+state | false | The 2-character abbreviation of the US state
+product | false | The product type ([either "BT0201", "BT1002", or "BT2002"]).  See full description above
+coverage | false | The face value of the life insurance policy in USD
+quoteid | false | The quoteid returned from the Quote API call
+
+
+
+
 
 # Errors
 
