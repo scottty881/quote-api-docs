@@ -148,10 +148,6 @@ height_inches | true | Inches part of height
 state | true | The 2-character abbreviation of the US state
 weight | true | Weight in lbs
 
-<aside class="success">
-Remember — Requests are rate limited at 10 requests per second
-</aside>
-
 ### Return values
 
 The call will receive a JSON object with a prices for a 2-year life insurance project (BT0201), 10-year product (BT1002), and a 20-year product (BT2002)
