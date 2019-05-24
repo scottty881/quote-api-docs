@@ -36,6 +36,10 @@ html, body {
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }
 
+a {
+  color: #029476;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
@@ -61,6 +65,7 @@ html, body {
   background-color: $nav-bg;
   font-size: 13px;
   font-weight: bold;
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,.2);
 
   // language selector for mobile devices
   .lang-selector {
@@ -351,8 +356,7 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1rem 1rem -1rem rgba(0,0,0,.2);
     background-color: #fdfdfd;
   }
 
@@ -467,14 +471,17 @@ html, body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
+    color: $aside-notice-text;
     line-height: 1.6;
 
     &.warning {
       background-color: $aside-warning-bg;
+      color: $aside-warning-text;
     }
 
     &.success {
       background-color: $aside-success-bg;
+      color: $aside-success-text;
     }
   }
 
@@ -612,4 +619,8 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+
+.highlight.http .err {
+  color: #f92672;
 }
