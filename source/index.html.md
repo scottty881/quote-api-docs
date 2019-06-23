@@ -61,7 +61,8 @@ curl -X POST \
 	"height_feet": 6,
 	"height_inches": 0,
 	"state": "TX",
-	"weight": 180
+	"weight": 180,
+  "tobacco": "no"
 }
 '
 ```
@@ -146,6 +147,7 @@ curl -X POST \
 | height_inches | true     | Inches part of height                        |
 | state         | true     | The 2-character abbreviation of the US state |
 | weight        | true     | Weight in lbs                                |
+| tobacco       | false    | "yes" or "no" string                         |
 
 ### Return values
 
