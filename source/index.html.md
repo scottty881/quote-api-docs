@@ -139,15 +139,15 @@ curl -X POST \
 
 ### Query Parameters
 
-| Parameter     | Required | Description                                  |
-| ------------- | -------- | -------------------------------------------- |
-| birth_date    | true     | Birth date in format YYYY-MM-DD              |
-| gender        | true     | "male" or "female"                           |
-| height_feet   | true     | Feet part of height                          |
-| height_inches | true     | Inches part of height                        |
-| state         | true     | The 2-character abbreviation of the US state |
-| weight        | true     | Weight in lbs                                |
-| tobacco       | false    | "yes" or "no" string                         |
+| Parameter       | Required | Description                                  |
+| --------------- | -------- | -------------------------------------------- |
+| birth_date      | true     | Birth date in format YYYY-MM-DD              |
+| gender          | true     | "male" or "female"                           |
+| height_feet     | true     | Feet part of height                          |
+| height_inches   | true     | Inches part of height                        |
+| state           | true     | The 2-character abbreviation of the US state |
+| weight          | true     | Weight in lbs                                |
+| tobacco         | false    | "yes" or "no" string                         |
 
 ### Return values
 
@@ -171,7 +171,11 @@ Inside the Product offering, you will recieve different prices for different amo
 
 > To enroll from a quote, use:
 
-> `GET https://enrollment.hellobestow.com/account`
+> `GET https://enrollment.hellobestow.com/get-started`
+
+> Alternatively, `/account/create-account` can be used but is less preferred.
+
+> `GET https://enrollment.hellobestow.com/account/create-account`
 
 When you send customers to enroll in life insurance with Bestow, direct them to the following URL, and you can pass in query params that will link your quote to the enrollment application. You can additionally pass in other query param so that the enrollment application is pre-populated with that data.
 
@@ -184,24 +188,28 @@ When you send customers to enroll in life insurance with Bestow, direct them to 
 
 ### HTTP Request
 
-`GET https://enrollment.hellobestow.com/account`
+`GET https://enrollment.hellobestow.com/get-started`
 
 ### Query Params
 
 > Example Using Query Parameters:
 
-> `GET https://enrollment.hellobestow.com/account?widget=api&quoteid=4ea338e6-56c5-4fd2-b07b-c0f90764afa1&date_of_birth=01/01/1980&gender=male&height=72&weight=180&state=TN&product=BT2002&coverage=700000&utm_source=Source&utm_name=Name&utm_medium=Medium&utm_content=Content&utm_term=Term`
+> `GET https://enrollment.hellobestow.com/get-started?widget=api&quoteid=4ea338e6-56c5-4fd2-b07b-c0f90764afa1&date_of_birth=01/01/1980&gender=male&height=72&weight=180&state=TN&product=BT2002&coverage=700000&utm_source=Source&utm_name=Name&utm_medium=Medium&utm_content=Content&utm_term=Term`
 
-| Parameter     | Required | Description                                                                             |
-| ------------- | -------- | --------------------------------------------------------------------------------------- |
-| product       | true     | The product type ([either "BT0201", "BT1002", or "BT2002"]). See full description above |
-| date_of_birth | false    | Birth date in format YYYY-MM-DD                                                         |
-| gender        | false    | "male" or "female"                                                                      |
-| height        | false    | Total height in inches                                                                  |
-| weight        | false    | Total weight in lbs                                                                     |
-| state         | false    | The 2-character abbreviation of the US state                                            |
-| coverage      | false    | The face value of the life insurance policy in USD                                      |
-| quoteid       | false    | The quoteid returned from the Quote API call                                            |
+| Parameter       | Required | Description                                                                                                                  |
+| --------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| product         | true     | The product type ([either "BT0201", "BT1002", or "BT2002"]). See full description above                                      |
+| date_of_birth   | false    | Birth date in format YYYY-MM-DD                                                                                              |
+| gender          | false    | "male" or "female"                                                                                                           |
+| height          | false    | Total height in inches                                                                                                       |
+| weight          | false    | Total weight in lbs                                                                                                          |
+| state           | false    | The 2-character abbreviation of the US state                                                                                 |
+| zip             | false    | 5 digit zipcode value                                                                                                        |
+| coverage        | false    | The face value of the life insurance policy in USD                                                                           |
+| quoteid         | false    | The quoteid returned from the Quote API call. If this is not provided the user will have to go select a quote in enrollment  |
+| partner_referral| false    | String value of referring partner name. Used to determine knockout page partner rules                                        |
+| email           | false    | Email in a valid string format                                                                                               |
+| premium         | false    | Which monthly premium was selected by the user at quote                                                                      |
 
 ### Campaign Params
 
