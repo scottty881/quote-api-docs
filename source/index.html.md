@@ -199,14 +199,14 @@ When you send customers to enroll in life insurance with Bestow, direct them to 
 | Parameter       | Required | Description                                                                                                                  |
 | --------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | product         | true     | The product type ([either "BT0201", "BT1002", or "BT2002"]). See full description above                                      |
+| coverage        | true     | The face value of the life insurance policy in USD                                                                           |
+| quoteid         | true     | The quoteid returned from the Quote API call. If this is not provided the user will have to go select a quote in enrollment  |
 | date_of_birth   | false    | Birth date in format YYYY-MM-DD                                                                                              |
 | gender          | false    | "male" or "female"                                                                                                           |
 | height          | false    | Total height in inches                                                                                                       |
 | weight          | false    | Total weight in lbs                                                                                                          |
 | state           | false    | The 2-character abbreviation of the US state                                                                                 |
 | zip             | false    | 5 digit zipcode value                                                                                                        |
-| coverage        | false    | The face value of the life insurance policy in USD                                                                           |
-| quoteid         | false    | The quoteid returned from the Quote API call. If this is not provided the user will have to go select a quote in enrollment  |
 | partner_referral| false    | String value of referring partner name. Used to determine knockout page partner rules                                        |
 | email           | false    | Email in a valid string format                                                                                               |
 | premium         | false    | Which monthly premium was selected by the user at quote                                                                      |
