@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='mailto:jake@bestow.co'>Sign Up for a Developer Key</a>
+  - <a href='mailto:matt@bestow.co'>Sign Up for a Developer Key</a>
 
 search: true
 ---
@@ -28,7 +28,7 @@ curl -X POST \
 
 > Make sure to replace `82zZIHeBqUlBtICMX5li` with your API key.
 
-Bestow uses API keys to allow access to the API. You can register a new Bestow API key by sending an [email to us](mailto:jake@bestow.co).
+Bestow uses API keys to allow access to the API. You can register a new Bestow API key by sending an [email to us](mailto:matt@bestow.co).
 
 Bestow expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
@@ -172,10 +172,6 @@ Inside the Product offering, you will recieve different prices for different amo
 > To enroll from a quote, use:
 
 > `GET https://enrollment.hellobestow.com/get-started`
-
-> Alternatively, `/account/create-account` can be used but is less preferred.
-
-> `GET https://enrollment.hellobestow.com/account/create-account`
 
 When you send customers to enroll in life insurance with Bestow, direct them to the following URL, and you can pass in query params that will link your quote to the enrollment application. You can additionally pass in other query param so that the enrollment application is pre-populated with that data.
 
